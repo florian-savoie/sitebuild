@@ -1,0 +1,24 @@
+.blockjeux{
+    width: 936px;
+    height: 565px;
+    background-image: url('../assets/img/bgbase.png');
+    background-size: auto;
+}
+.blockgauche{
+width: 584px;
+height: 100%;
+}
+.blockdroit{
+width: 352px;
+height: 100%;
+background-color: rgb(26, 15, 31);
+}
+.mabase{
+    color: rgb(236, 111, 9);
+}
+.affichagebatprod{
+ font-size: 11px ;
+}
+.affichagebatprodnom{
+    width: 100%;
+}
