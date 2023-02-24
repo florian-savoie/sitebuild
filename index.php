@@ -39,15 +39,19 @@ require('actions\questions\affichageBatPodbase.php')
                     <tbody>
 
                         <?php while ($batprod = $getbatprod->fetch()) {
-                        ?><tr>
+
+                        ?>
+        <?php if ($batprod['nombresBat'] > 0 ) {      ?>          
+                        <tr>
                                 <td class="affichagebatprod"><?= $batprod['nombresBat']; ?></td>
                                 <td class="affichagebatprod affichagebatprodnom"  ><?= $batprod['nom']; ?></td>
                                 <td class="affichagebatprod"><?= $batprod['productionBatNombres']; ?></td>
                                 <td class="affichagebatprod"><?= $batprod['productionOuvrierNombres']; ?></td>
                                 <td class="affichagebatprod"><a href="index.php?construction=<?= $batprod['id']; ?>"><img src="http://www.buildandfight.com/images/details.gif" alt=""></a></td>
                             </tr>
+
                         <?php
-                        } ?>
+                      }  } ?>
 
                     </tbody>
                 </table>

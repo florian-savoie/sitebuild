@@ -16,9 +16,11 @@ background-color: rgb(26, 15, 31);
 .mabase{
     color: rgb(236, 111, 9);
 }
-.affichagebatprod{
- font-size: 11px ;
+
+td{
+    font-size: 11px;
 }
-.affichagebatprodnom{
-    width: 100%;
+
+td{
+    padding: 0 !important;
 }
