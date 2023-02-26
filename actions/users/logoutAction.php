@@ -9,4 +9,4 @@ require('../../actions/database.php');
             $insertUserdatedeco->execute(array(time(),$_SESSION['id']));
 $_SESSION = [];
 session_destroy();
-header('Location: ../../login.php');
+header('Location: ../../acceuil2.php');

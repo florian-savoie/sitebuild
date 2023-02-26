@@ -1,5 +1,4 @@
 <?php 
-    session_start(); 
     require('actions/users/showOneUsersProfileAction.php');   
 ?>
 <!DOCTYPE html>
