@@ -6,10 +6,11 @@ require('actions\questions\acheterdivers.php')
 <?php include 'includes/head.php'; ?>
 
 <body>
-    <?php include 'includes/navbar.php'; ?>
     <br><br>
 
     <div class="container blockjeux">
+    <?php include 'includes/navbf.php'; ?>
+
         <div class="row">
             <div class="blockgauche">
 

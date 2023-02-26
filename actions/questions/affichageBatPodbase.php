@@ -35,13 +35,22 @@ $terrainbatguerre->execute(array($idOfUser));
 
 
         //Récupérer toutes les batiments de production de l'utilisateur
-        $getbatprod = $bdd->prepare('SELECT bp.id, bp.nom, SUM(bpp.nombresBat) AS nombresBat, SUM(bpp.nombresOuvrier) AS nombresOuvrier, SUM(bp.productionBat * bpp.nombresBat) AS productionBatNombres, SUM(bp.productionOuvrier * bpp.nombresOuvrier) AS productionOuvrierNombres
+        $getbatprod = $bdd->prepare('SELECT bp.id, bp.nom, SUM(bpp.nombresBat) AS nombresBat, SUM(bpp.nombresOuvrier) AS nombresOuvrier, SUM(bp.productionBat * bpp.nombresBat) AS productionBatNombres, SUM(bp.productionOuvrier * bpp.nombresOuvrier) AS productionOuvrierNombres ,
+        SUM(bp.productionBat * bpp.nombresBat) + SUM(bp.productionOuvrier * bpp.nombresOuvrier) AS gaindelaressource 
         FROM batimentproductionplayer bpp
         INNER JOIN batiments_prod bp ON bpp.idBatiment = bp.id
         WHERE bpp.id_player = ?
         GROUP BY bp.nom');
         $getbatprod->execute(array($idOfUser));
 
+
+        //Récupérer le gain de production de chaque batiment 
+        $getressourceprod = $bdd->prepare('SELECT bp.nom,( bpp.nombresBat * bp.productionBat ) + ( bpp.nombresOuvrier * bp.productionOuvrier ) AS productiontotale
+        FROM batiments_prod bp
+        INNER JOIN batimentproductionplayer bpp ON bp.id = bpp.idBatiment
+        WHERE bpp.id_player = ?');
+        $getressourceprod->execute(array($idOfUser));
+        $getresource = $getressourceprod->fetchAll();
 
         //Récupérer toutes les batiments de guerre  de l'utilisateur
         $getbatguerre = $bdd->prepare('SELECT 
@@ -52,3 +61,45 @@ $terrainbatguerre->execute(array($idOfUser));
       INNER JOIN bat_guerre ON bat_guerre_player.id_batiment = bat_guerre.id
       WHERE bat_guerre_player.id_player = ?;');
         $getbatguerre->execute(array($idOfUser));
+
+
+      
+        ?>
+<script>
+ 
+
+
+
+ // Définir les variables pour les gains journaliers des bâtiments
+let ressourceor = <?= $getresource[0][1] ?>;
+let ressourcepetrol = <?= $getresource[1][1] ?>;
+let ressourceberium= <?= $getresource[2][1] ?>;
+let ressourceelectricite = <?= $getresource[3][1] ?>;
+
+// Définir la fréquence d'incrémentation en millisecondes
+const incrementInterval = 5000; // 5 secondes
+
+function incrementResources(ressourceor, ressourcepetrol, ressourceberium, ressourceelectricite) {
+  // Incrémenter chaque ressource en fonction de son gain quotidien
+  ressourceor += (<?= $getresource[0][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
+  ressourcepetrol += (<?= $getresource[1][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
+  ressourceberium += (<?= $getresource[2][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
+  ressourceelectricite += (<?= $getresource[3][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
+
+  // Afficher les ressources mises à jour
+  console.log(ressourceor);
+  console.log(ressourcepetrol);
+  console.log(ressourceberium);
+  console.log(ressourceelectricite);
+
+  // Mettre à jour les éléments du DOM correspondants
+  document.getElementById("ressourceor").innerHTML = Math.floor(ressourceor);
+  document.getElementById("ressourcepetrol").innerHTML = Math.floor(ressourcepetrol);
+  document.getElementById("ressourceberium").innerHTML = Math.floor(ressourceberium);
+  document.getElementById("ressourceelectricite").innerHTML = "fddfffggfd";
+}
+
+/*
+// Lancer l'incrémentation toutes les 5 secondes
+setInterval(incrementResources, incrementInterval);*/
+</script>

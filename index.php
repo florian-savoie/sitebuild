@@ -1,10 +1,12 @@
 <?php
 require('actions\questions\affichageBatPodbase.php')
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
 
+<!-- <script src="assets/js/ressources.js"></script>-->
 <body>
     <br><br>
     <div class="container blockjeux">
@@ -166,225 +168,21 @@ require('actions\questions\affichageBatPodbase.php')
                     <a href=""><img src="assets/img/ongletbat/panneau ressource.jpg" alt="" style="width: 352px;height:21px;"></a>
                 </div>
 
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                    <tbody>
-                        <tr>
-                            <td width="100%" valign="top">
-                                <table cellpadding="0" cellspacing="0" width="95%" align="center" border="0">
-                                    <tbody>
-                                        <tr>
-                                            <td>
+           
 
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/food.gif" border="0">&nbsp;Nourriture
-                                                            </td>
-                                                            <td align="right" style="color:#FF6600" nowrap="" width="40%">
-                                                                <div id="res_10"><?= $ressource['nourriture'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/elec.gif" border="0">&nbsp;Electricité
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_9"><?= $ressource['electriciter'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/sp98.gif" border="0">&nbsp;SP98
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_8"><?= $ressource['sp98'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/sp95.gif" border="0">&nbsp;SP95
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_7"><?= $ressource['sp95'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/diesel.gif" border="0">&nbsp;Diesel
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_6"><?= $ressource['diesel'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td width="2"></td>
-                                            <td>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/plutonium.gif" border="0">&nbsp;Plutonium
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_5"><?= $ressource['plutonium'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/uranium.gif" border="0">&nbsp;Uranium
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_4"><?= $ressource['uranium'] ?></div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/down.gif" border="0" alt="">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/tiberium.gif" border="0">&nbsp;Berium
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_3"><?= $ressource['berium'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/gold.gif" border="0">&nbsp;Or
-                                                            </td>
-                                                            <td align="right" style="color:#FF0000" nowrap="" width="40%">
-                                                                <div id="res_2"><?= $ressource['or'] ?></div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/down.gif" border="0" alt="">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/petrol.gif" border="0">&nbsp;Pétrole
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_1"><?= $ressource['petrol'] ?>&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <table cellpadding="0" cellspacing="0" border="0">
-                                                    <tbody>
-                                                        <tr height="1">
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="70" nowrap="">
-                                                                <img src="assets/img/ongletbat/renta.gif" border="0">&nbsp;Renta
-                                                            </td>
-                                                            <td align="right" style="color:#FFFFFF" nowrap="" width="40%">
-                                                                <div id="res_11">0&nbsp;</div>
-                                                            </td>
-                                                            <td align="right" nowrap="">
-                                                                <img src="images/pause.gif" border="0" alt="" width="9">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+   
+        <tr>
+        <p>Ressource en or : <span id="ressourceor">0</span></p>
+	<p>Ressource en pétrole : <span id="ressourcepetrol">0</span></p>
+	<p>Ressource en berium : <span id="ressourceberium">0</span></p>
+	<p>Ressource en électricité : <span id="ressourceelectricite">0</span></p>
+           
+        </tr>
 
+        <script>
+incrementResources(ressourceor, ressourcepetrol, ressourceberium, ressourceelectricite);
+
+</script>
 
 
             </div>
