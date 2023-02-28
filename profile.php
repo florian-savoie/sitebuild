@@ -1,49 +1,36 @@
-<?php 
-    require('actions/users/showOneUsersProfileAction.php');   
-?>
+<?php
+ require('actions/users/profilplayer.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
+
 <body>
-    <?php include 'includes/navbar.php'; ?>
     <br><br>
 
-    <div class="container">
-        <?php 
-            if(isset($errorMsg)){ echo $errorMsg; }
+    <div class="container blockjeux">
+    <?php include 'includes/navbf.php'; ?>
 
-            if(isset($getHisQuestions)){
+        <div class="row col-12">
+       
+<h2 style="color:green;">Bienvenue <?= $info["pseudo"] ?></h2>
+<h2 style="color:green;">vous avez  <?= $info["date"] ?>jour d'ancienneter</h2>
+<img src="<?= $info["img"] ?>" alt="" style="height:150px;width:150px">
 
-                ?>
-                <div class="card">
-                    <div class="card-body">
-                        <h4>@<?= $user_pseudo; ?></h4>
-                        <hr>
-                        <p><?= $user_lastname . ' ' . $user_firstname; ?></p>
-                    </div>
-                </div>
-                <br>
-                <?php
-                while($batprod = $getbatprod->fetch()){ 
-                    ?>
-                    <div class="card">
-                        <div class="card-header">
-                            <?= $batprod['titre']; ?>
-                        </div>
-                        <div class="card-body">
-                            <?= $batprod['description']; ?>
-                        </div>
-                        <div class="card-footer">
-                            Par <?= $batprod['pseudo_auteur']; ?> le <?= $question['date_publication'];  ?>
-                        </div>
-                    </div>
-                    <br>
-                    <?php
-                }
 
-            }
-        ?>  
+<form method="POST">
+  <div class=" row col-12 mb-3">
+   <div class="col-6">
+    <label for="imd" class="form-label"style="color:white;">img</label></div>
+   <div class="col-6">
+    <input type="text" class="form-control" id="img" placeholder="Enter la nouvel image" name="img"style="width:300px;"></div>
+  </div>
+  <button type="submit" class="btn btn-primary">Evoyer</button>
+</form>
+        </div>
+
     </div>
 
 </body>
+
 </html>

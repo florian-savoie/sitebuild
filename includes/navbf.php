@@ -1,4 +1,4 @@
-<div class="d-flex">
+<div class="d-flex mt-5">
                     <a href="index.php" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ma base"><img src="assets/img/ongletnav/log_mabase2.jpg" alt="" style="width: 103px;height:23;"></a>
                     <a href=""data-bs-toggle="tooltip" data-bs-placement="bottom" title="base marine"><img src="assets/img/ongletnav/log_mabase_marine2.jpg" alt="" style="width: 103px;height:23;"></a>
                     <a href=""data-bs-toggle="tooltip" data-bs-placement="bottom" title="attaque"><img src="assets/img/ongletnav/log_attaques2.jpg" alt="" style="width: 103px;height:23;"></a>

@@ -8,6 +8,7 @@ require('actions\questions\affichageBatPodbase.php')
 
 <!-- <script src="assets/js/ressources.js"></script>-->
 <body>
+
     <br><br>
     <div class="container blockjeux">
         <?php require('includes/navbf.php'); ?>
@@ -172,15 +173,23 @@ require('actions\questions\affichageBatPodbase.php')
 
    
         <tr>
-        <p>Ressource en or : <span id="ressourceor">0</span></p>
-	<p>Ressource en pétrole : <span id="ressourcepetrol">0</span></p>
-	<p>Ressource en berium : <span id="ressourceberium">0</span></p>
-	<p>Ressource en électricité : <span id="ressourceelectricite">0</span></p>
-           
+            <div class="d-flex mt-3">
+                <div class="col-6">
+        <p style="color:white">or : <span id="ressourceor">0</span></p>
+	<p style="color:white">pétrole : <span id="ressourcepetrol">0</span></p>
+	<p style="color:white">berium : <span id="ressourceberium">0</span></p>
+	<p style="color:white">électricité : <span id="ressourceelectricite">0</span></p>
+      </div>   
+                <div class="col-6">
+        <p style="color:white">or : <span id="ressourceor">0</span></p>
+	<p style="color:white">pétrole : <span id="ressourcepetrol">0</span></p>
+	<p style="color:white">berium : <span id="ressourceberium">0</span></p>
+	<p style="color:white">électricité : <span id="ressourceelectricite">0</span></p>
+      </div>   
+     </div> 
         </tr>
 
         <script>
-incrementResources(ressourceor, ressourcepetrol, ressourceberium, ressourceelectricite);
 
 </script>
 

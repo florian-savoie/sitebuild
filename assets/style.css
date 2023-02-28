@@ -1,3 +1,7 @@
+body{
+   /* line-height: 5px;*/
+
+}
 .blockjeux{
     width: 936px;
     height: 565px;
@@ -23,5 +27,4 @@ td{
 
 td{
     padding: 0 !important;
-    
 }

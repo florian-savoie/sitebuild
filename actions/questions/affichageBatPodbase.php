@@ -62,8 +62,6 @@ $terrainbatguerre->execute(array($idOfUser));
       WHERE bat_guerre_player.id_player = ?;');
         $getbatguerre->execute(array($idOfUser));
 
-
-      
         ?>
 <script>
  
@@ -71,35 +69,33 @@ $terrainbatguerre->execute(array($idOfUser));
 
 
  // Définir les variables pour les gains journaliers des bâtiments
-let ressourceor = <?= $getresource[0][1] ?>;
-let ressourcepetrol = <?= $getresource[1][1] ?>;
-let ressourceberium= <?= $getresource[2][1] ?>;
-let ressourceelectricite = <?= $getresource[3][1] ?>;
+let ressourceor = <?= $ressource['gold'] ?>;
+let ressourcepetrol = <?= $ressource['petrol'] ?>;
+let ressourceberium= <?= $ressource['berium'] ?>;
+let ressourceelectricite = <?= $ressource['electriciter'] ?>;
+let orsegonde = (<?= $getresource[0][1] ?> / 24 / 60 / 60);
+let petrolsegonde = (<?= $getresource[1][1] ?> / 24 / 60 / 60);
+let beriumsegonde = (<?= $getresource[2][1] ?> / 24 / 60 / 60);
+let electricitesegonde = (<?= $getresource[3][1] ?> / 24 / 60 / 60);
 
-// Définir la fréquence d'incrémentation en millisecondes
-const incrementInterval = 5000; // 5 secondes
 
-function incrementResources(ressourceor, ressourcepetrol, ressourceberium, ressourceelectricite) {
+function incrementResources(ressource,idressource,orsegonde) {
   // Incrémenter chaque ressource en fonction de son gain quotidien
-  ressourceor += (<?= $getresource[0][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
-  ressourcepetrol += (<?= $getresource[1][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
-  ressourceberium += (<?= $getresource[2][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
-  ressourceelectricite += (<?= $getresource[3][1] ?> / 24 / 60 / 60) * incrementInterval / 1000;
+  ressource += orsegonde ;
+
 
   // Afficher les ressources mises à jour
-  console.log(ressourceor);
-  console.log(ressourcepetrol);
-  console.log(ressourceberium);
-  console.log(ressourceelectricite);
+  console.log(ressource);
 
   // Mettre à jour les éléments du DOM correspondants
-  document.getElementById("ressourceor").innerHTML = Math.floor(ressourceor);
-  document.getElementById("ressourcepetrol").innerHTML = Math.floor(ressourcepetrol);
-  document.getElementById("ressourceberium").innerHTML = Math.floor(ressourceberium);
-  document.getElementById("ressourceelectricite").innerHTML = "fddfffggfd";
-}
+  document.getElementById(idressource).innerHTML = Math.floor(ressource);
 
-/*
-// Lancer l'incrémentation toutes les 5 secondes
-setInterval(incrementResources, incrementInterval);*/
+  return ressource ;
+}
+setInterval(function() {
+  ressourceor = incrementResources(ressourceor,"ressourceor",orsegonde);
+  ressourcepetrol = incrementResources(ressourcepetrol,"ressourcepetrol",petrolsegonde);
+  ressourceberium = incrementResources(ressourceberium,"ressourceberium",beriumsegonde);
+  ressourceelectricite = incrementResources(ressourceelectricite,"ressourceelectricite",electricitesegonde);
+}, 1000); // 10 secondes pourquoi mais ressource ne s'incremente pas toute les 10 segondes
 </script>
